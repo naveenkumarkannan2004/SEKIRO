@@ -1,86 +1,23 @@
+<!DOCTYPE html>
+<!--
+  @license
+  Copyright 2019 Google LLC. All Rights Reserved.
+  SPDX-License-Identifier: Apache-2.0
+-->
 <html>
   <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <title>Distance Matrix Service</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgyDOb_G-P9kUVQLXoHCzWpFRlCiYXb6U&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
-  <body class="bg-gray-100 font-roboto">
-    <div class="container mx-auto px-4">
-      <header class="flex items-center justify-between py-4">
-        <h1 class="text-2xl font-bold text-gray-800">Women Safety Analytics</h1>
-        <nav class="space-x-4">
-          <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Features</a>
-          <a href="#" class="text-gray-600 hover:text-gray-800">About</a>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Contact</a>
-          <a href="Login\Public\login.html" class="text-gray-600 hover:text-gray-800">Login</a>
-          <a href="Login\Public\signup.html" class="text-gray-600 hover:text-gray-800">Signup</a>
-          
-        </nav>
-      </header>
-
-      <main>
-        <section class="bg-white p-6 rounded-lg shadow-md my-6">
-          <div class="flex items-center justify-between">
-            <div>
-              <h2 class="text-xl font-semibold text-gray-800">Enhancing Safety through Advanced Analytics</h2>
-              <p class="mt-2 text-gray-600">Our real-time threat detection software offers features like person detection, gender classification, and monitoring gender distribution to ensure women's safety.</p>
-            </div>
-            <img src="https://placehold.co/150x150" alt="Safety analytics illustration" class="rounded-full shadow-md">
-          </div>
-        </section>
-
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <i class="fas fa-user-shield text-4xl text-blue-500 mb-4"></i>
-            <h3 class="text-lg font-semibold text-gray-800">Person Detection</h3>
-            <p class="mt-2 text-gray-600">Identify individuals in real-time to monitor surroundings effectively.</p>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <i class="fas fa-venus-mars text-4xl text-pink-500 mb-4"></i>
-            <h3 class="text-lg font-semibold text-gray-800">Gender Classification</h3>
-            <p class="mt-2 text-gray-600">Classify gender to understand distribution in an area.</p>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
-            <h3 class="text-lg font-semibold text-gray-800">Risk Detection</h3>
-            <p class="mt-2 text-gray-600">Detect risky situations and trigger alerts for intervention.</p>
-          </div>
-        </section>
-
-        <section class="bg-white p-6 rounded-lg shadow-md my-6">
-          <h2 class="text-xl font-semibold text-gray-800">Live Monitoring</h2>
-          <div class="mt-4 flex justify-center space-x-5">
-            <img src="https://i.pinimg.com/originals/da/34/6b/da346ba7552353208d582821776e714c.jpg" alt="Live monitoring dashboard" class="w-72 h-72 rounded-lg shadow-md">
-            <img src="https://watermark.lovepik.com/photo/50172/2552_lovepik-urban-women-walking-on-the-road-with-suitcases-at-photo-image_wh1200.jpg" alt="Live monitoring dashboard" class="w-72 h-72 rounded-lg shadow-md">
-            <img src="https://st2.depositphotos.com/2249091/5292/i/450/depositphotos_52928435-stock-photo-woman-walking-alone-at-night.jpg" alt="Live monitoring dashboard" class="w-72 h-72 rounded-lg shadow-md">
-            <img src="https://watermark.lovepik.com/photo/20211126/large/lovepik-lonely-girl-waiting-to-cross-the-street-picture_501119716.jpg" alt="Live monitoring dashboard" class="w-72 h-72 rounded-lg shadow-md">
-          </div>
-        </section>
-        
-
-        <section class="bg-white p-6 rounded-lg shadow-md my-6">
-          <h2 class="text-xl font-semibold text-gray-800">Recent Alerts</h2>
-          <div class="mt-4 space-y-4">
-            <div class="p-4 bg-red-100 rounded-lg shadow-md">
-              <p class="text-gray-800"><strong>Alert:</strong> Lone woman detected in a high-risk area at 11:45 PM.</p>
-              <p class="text-gray-600 mt-1">Location: ABC ROAD</p>
-            </div>
-            <div class="p-4 bg-red-100 rounded-lg shadow-md">
-              <p class="text-gray-800"><strong>Alert:</strong> Woman surrounded by a group of men at 10:30 PM.</p>
-              <p class="text-gray-600 mt-1">Location: XYZ ROAD</p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="text-center py-4">
-        <p class="text-gray-600">Developed by Sikero </p>
-      </footer>
-    </div>
-
+  <body>
+    
+      <div id="map"></div>
+      
     <script src="script.js"></script>
+    
   </body>
 </html>
