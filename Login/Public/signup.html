@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/futuristic-background-design_23-2148503793.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-lg font-medium mb-4">Sign Up</h2>
+        <form id="signupForm">
+            <div class="mb-4">
+                <label class="block text-gray-700" for="email">Email</label>
+                <input type="email" id="email" class="w-full px-3 py-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700" for="password">Password</label>
+                <input type="password" id="password" class="w-full px-3 py-2 border rounded" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Sign Up</button>
+        </form>
+        <div id="message" class="mt-4 text-red-500"></div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+                const messageDiv = document.getElementById('message');
+
+                if (data.success) {
+                    messageDiv.textContent = 'Signup successful!';
+                    messageDiv.classList.remove('text-red-500');
+                    messageDiv.classList.add('text-green-500');
+                    // Redirect to login page or another page if needed
+                } else {
+                    messageDiv.textContent = data.message;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

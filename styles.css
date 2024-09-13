@@ -1,0 +1,29 @@
+/* Additional custom styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header h1 {
+    color: #1a202c; /* Darker gray for the header */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+section img {
+    transition: transform 0.3s ease;
+}
+
+section img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+footer {
+    background-color: #f7fafc; /* Light gray background for footer */
+}
+
+footer p {
+    margin: 0;
+    color: #718096; /* Muted gray for the footer text */
+}
